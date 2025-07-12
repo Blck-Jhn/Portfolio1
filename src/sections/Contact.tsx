@@ -9,7 +9,7 @@ export default function ContactSection() {
         <div className="container">
             <div className="bg-gradient-to-l from-green-800 to-white text-gray-900 py-8 px-10 rounded-3xl  text-center relative overflow-hidden z-0 md:text-left">
               <div className="absolute inset-0 opacity-5 -z-10" style={{
-                backgroundImage:`url (${grainImage.src})`,
+                backgroundImage:`url(${grainImage.src})`,
               }}>
                 
               </div>
