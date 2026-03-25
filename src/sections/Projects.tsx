@@ -11,19 +11,20 @@ import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import grainImage from "@/assets/images/grain.jpg";
 import Image from 'next/image';
+import career from "@/assets/images/career.png"
 
 const portfolioProjects = [
   {
-    company: "WeatherChrome Inc",
-    year: "2024",
-    title: "Dynamic Weather App Engine",
+    company: "CareerLens",
+    year: "2026",
+    title: "AI-powered Resume Analyzer",
     results: [
       { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
+      { title: "70-85% keyword detection accuracy across common tech and business resumes"},
       { title: "Increased mobile traffic by 35%" },
     ],
-    link: "https://github.com/BlckJhn",
-    image: weather,
+    link: "https://career-lens-ljjt.vercel.app/",
+    image: career,
   },
   {
     company: "Chapters Cove.",
@@ -34,7 +35,7 @@ const portfolioProjects = [
       { title: "Expanded customer reach by 35%" },
       { title: "Increased brand awareness by 15%" },
     ],
-    link: "https://github.com/BlckJhn",
+    link: "https://github.com/Blck-Jhn",
     image: book,
   },
   {
@@ -46,7 +47,7 @@ const portfolioProjects = [
       { title: "Improved site speed by 50%" },
       { title: "Increased mobile traffic by 35%" },
     ],
-    link: "https://github.com/BlckJhn",
+    link: "https://github.com/Blck-Jhn",
     image: ecommerce,
   },
 ];
