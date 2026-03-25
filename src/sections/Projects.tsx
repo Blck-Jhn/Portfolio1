@@ -12,6 +12,7 @@ import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import grainImage from "@/assets/images/grain.jpg";
 import Image from 'next/image';
 import career from "@/assets/images/career.png"
+import clearmint from "@/assets/images/clearmint.png"
 
 const portfolioProjects = [
   {
@@ -38,6 +39,19 @@ const portfolioProjects = [
     link: "https://chapter-cove-1.vercel.app/",
     image: book,
   },
+  {
+    company: "ClearMint",
+    year: "2026",
+    title: "The Ultimate AI-Powered Wealth Command Center",
+    results: [
+      { title: "Enhanced user experience by 40%" },
+      { title: "18.4% Average Savings Increase" },
+      { title: "100% security record using AES-256 bank-grade encryption and SOC2 Type II compliance standards." },
+    ],
+    link: "https://github.com/Blck-Jhn",
+    image: clearmint,
+  },
+
   {
     company: "JBR Limited",
     year: "2023",
