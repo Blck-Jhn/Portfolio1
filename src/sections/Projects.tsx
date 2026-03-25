@@ -35,7 +35,7 @@ const portfolioProjects = [
       { title: "Expanded customer reach by 35%" },
       { title: "Increased brand awareness by 15%" },
     ],
-    link: "https://github.com/Blck-Jhn",
+    link: "https://chapter-cove-1.vercel.app/",
     image: book,
   },
   {
