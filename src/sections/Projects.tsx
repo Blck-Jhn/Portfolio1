@@ -46,7 +46,7 @@ const portfolioProjects = [
     results: [
       { title: "Enhanced user experience by 40%" },
       { title: "18.4% Average Savings Increase" },
-      { title: "100% security record using AES-256 bank-grade encryption and SOC2 Type II compliance standards." },
+      { title: "100% Bank-grade Encryption " },
     ],
     link: "https://clear-mint-f5bo.vercel.app/",
     image: clearmint,
