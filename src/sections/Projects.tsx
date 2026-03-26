@@ -48,7 +48,7 @@ const portfolioProjects = [
       { title: "18.4% Average Savings Increase" },
       { title: "100% security record using AES-256 bank-grade encryption and SOC2 Type II compliance standards." },
     ],
-    link: "https://github.com/Blck-Jhn",
+    link: "https://clear-mint-f5bo.vercel.app/",
     image: clearmint,
   },
 
