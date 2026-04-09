@@ -85,7 +85,7 @@ export default function Projects() {
             >
               <div className="lg:grid lg:grid-cols-2 lg:gap-16">
                 <div className="lg:pb-16">
-                  {/* Company & Year Badge */}
+                  
                   <div className="bg-gradient-to-r from-red-400 to-sky-400 inline-flex gap-2 font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text">
                     <span>{project.company}</span>
                     <span className="text-white/20">&bull;</span>
@@ -98,7 +98,7 @@ export default function Projects() {
                   
                   <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
 
-                  {/* Results List */}
+                  
                   <ul className="flex flex-col gap-4 mt-4 md:mt-5">
                     {project.results.map((result, index) => (
                       <li key={index} className="flex gap-3 text-sm text-white/50 md:text-base">
