@@ -6,6 +6,8 @@ import { SectionHeader } from '@/components/SectionHeader';
 import weather from "@/assets/images/weather 1.png";
 import book from "@/assets/images/book.png";
 import ecommerce from "@/assets/images/ecommerce.png";
+import onyxandivy from "@/assets/images/onyxandivy.png";
+
 import { Card } from '@/components/Cards';
 import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
@@ -53,8 +55,8 @@ const portfolioProjects = [
   },
 
   {
-    company: "JBR Limited",
-    year: "2023",
+    company: "Onyx & Ivy",
+    year: "2026",
     title: "Alternative E-commerce Strategy",
     results: [
       { title: "Enhanced user experience by 40%" },
@@ -62,7 +64,7 @@ const portfolioProjects = [
       { title: "Increased mobile traffic by 35%" },
     ],
     link: "https://github.com/Blck-Jhn",
-    image: ecommerce,
+    image:onyxandivy,
   },
 ];
 
