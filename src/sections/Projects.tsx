@@ -63,7 +63,7 @@ const portfolioProjects = [
       { title: "Improved site speed by 50%" },
       { title: "Increased mobile traffic by 35%" },
     ],
-    link: "https://github.com/Blck-Jhn",
+    link: "https://onyx-and-ivy.vercel.app/",
     image:onyxandivy,
   },
 ];
