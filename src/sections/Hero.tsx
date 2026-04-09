@@ -44,31 +44,44 @@ export default function HeroSection() {
     <HeroOrbit size={650} rotation={-12}> <div className='w-2 h-2 rounded-full bg-emerald-300/20'></div> </HeroOrbit>
     </div>
   <div className="container">
-      <div className=' flex flex-col items-center '>
-      <Image src={memojiImage} className='w-[100px] h-[100px]' alt='Looking behind a screen'/>
-      <div className='bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg'>
-        <div className='bg-red-500 w-[10px] h-[10px] rounded-full relative'> 
-          <div className='bg-green-500 absolute inset-0 animate-ping-large rounded-full'></div>
+      <div className='flex flex-col items-center'>
+          <Image 
+            src={memojiImage} 
+            className='w-[100px] h-[100px] transition-transform duration-300 hover:scale-110' 
+            alt='Memoji at computer'
+          />         
+          <div className='bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg shadow-inner'>
+            <div className='relative flex h-3 w-3'>
+              <span className='animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75'></span>
+              <span className='relative inline-flex rounded-full h-3 w-3 bg-emerald-500'></span>
+            </div>
+            <div className='text-sm font-medium tracking-tight'>Available for new projects</div> 
+          </div>
         </div>
-        <div className='text-sm font-medium'>Open to New Project Opportunities
-        </div> 
-      </div>
-      </div>
-       <div className='max-w-lg mx-auto '>
-      <h1 className='font-serif text-3xl md:text-5xl text-center mt-8 tracking-wide font-extrabold '>Crafting Remarkable User Experiences</h1>
-      <p className='mt-4 text-center text-white/60 md:text-lg'>
-      I specialize in turning design concepts into efficient, high-performing web applications. With a focus on transforming ideas into dynamic, functional solutions, I &apos;m excited to connect and discuss your next project
-      </p>
-      </div>
-      <div className='flex flex-col md:flex-row justify-center items-center mt-8 gap-4'>
-        <Link href="#project" className='inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl hover:bg-red-950/60 hover:text-white transition duration-300'>
-        <span className='font-semibold'>Explore My Work</span><ArrowDown className='w-4 h-4' />
-        </Link>
-        <Link href='#contact' className='inline-flex items-center gap-2 border border-white bg-white text-gray-900 h-12 px-6 rounded-xl hover:bg-green-900 hover:text-white'>
-        <span>😎</span>
-        <span className='font-semibold'>Let&apos;s Connect</span>
-       </Link>
-      </div>
+     <div className='max-w-lg mx-auto'>
+          <h1 className='font-serif text-3xl md:text-6xl text-center mt-8 tracking-tight font-extrabold leading-tight'>
+            Building Scalable Apps with <span className='bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent'>Purpose</span>
+          </h1>
+          <p className='mt-4 text-center text-white/70 md:text-lg leading-relaxed'>
+            I bridge the gap between design and high-performance code, transforming ambitious ideas into functional, secure, and intuitive web experiences.
+          </p>
+        </div>
+      <div className='flex flex-col md:flex-row justify-center items-center mt-10 gap-4'>
+          <Link 
+            href="#project" 
+            className='inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl hover:bg-white/10 transition-all duration-300 group'
+          >
+            <span className='font-semibold'>Explore My Work</span>
+            <ArrowDown className='w-4 h-4 transition-transform group-hover:translate-y-1' />
+          </Link>
+          <Link 
+            href='#contact' 
+            className='inline-flex items-center gap-2 bg-white text-gray-950 h-12 px-8 rounded-xl hover:bg-emerald-50 transition-all duration-300 font-bold shadow-lg shadow-emerald-500/10'
+          >
+            <span>👋</span>
+            <span>Let&apos;s Connect</span>
+          </Link>
+        </div>
      </div>
   </div>
   )

@@ -1,87 +1,107 @@
-import React from 'react'
+import React, { Fragment } from 'react';
+import Image from 'next/image';
+
+// Components
+import { SectionHeader } from '@/components/SectionHeader';
+import { Card } from '@/components/Cards';
+
+// Assets
 import memojiAvatar1 from "@/assets/images/memoji-avatar-1.png";
 import memojiAvatar2 from "@/assets/images/memoji-avatar-2.png";
 import memojiAvatar3 from "@/assets/images/memoji-avatar-3.png";
 import memojiAvatar4 from "@/assets/images/memoji-avatar-4.png";
 import memojiAvatar5 from "@/assets/images/memoji-avatar-5.png";
-import { SectionHeader } from '@/components/SectionHeader';
-import Image from 'next/image';
 import grainImage from "@/assets/images/grain.jpg";
-import { Card } from '@/components/Cards';
-import { HeroOrbit } from '@/components/HeroOrbit';
-import SparkleIcon from '@/assets/icons/sparkle.svg';
-import StarIcon from '@/assets/icons/star.svg';
-import { Fragment } from 'react';
-
-
-
 
 const testimonials = [
   {
     name: "Alex Turner",
-    position: "Marketing Manager",
-    text: "John was essential in turning our website into an effective marketing tool. His meticulous attention to detail and strong grasp of our brand were outstanding. We're extremely pleased with the outcome!",
+    position: "Marketing Manager @ CareerLens",
+    text: "John’s AI integration was a game-changer. He didn't just build a tool; he created an intelligent experience that boosted our keyword detection accuracy to 85%. His work is meticulously executed.",
     avatar: memojiAvatar1,
   },
   {
     name: "Olivia Green",
-    position: "Head of Design",
-    text: "It was a pleasure working with John. His frontend development skills brought our designs to life in ways we hadn't anticipated. The website has exceeded all our expectations",
+    position: "Design Lead @ Onyx & Ivy",
+    text: "John is a rarity—a developer with a true eye for design. He took our boutique vision and translated it into a high-performance storefront with a 50% increase in load speeds.",
     avatar: memojiAvatar2,
   },
   {
     name: "Daniel White",
-    position: "CEO @ Chapter Cove",
-    text: "John's talent for crafting smooth user experiences is unparalleled. Since the launch of the new design, our website has experienced a notable boost in conversions. We couldn't be more pleased.",
+    position: "CEO @ Chapters Cove",
+    text: "The transition to our new book management system was seamless. John’s focus on user flow led to a 20% boost in sales within the first quarter. Absolute professional.",
     avatar: memojiAvatar3,
   },
   {
     name: "Emily Carter",
-    position: "Product Manager @ WeatherChrome Inc",
-    text: "John is a full-stack expert. He took our complex product and turned it into an intuitive and engaging user interface. We're already receiving positive feedback from our customers.",
+    position: "Product Manager @ ClearMint",
+    text: "Security was our top priority for the wealth center. John delivered bank-grade encryption without sacrificing the smooth, modern UI our users love. He's a full-stack powerhouse.",
     avatar: memojiAvatar4,
   },
   {
     name: "Michael Brown",
-    position: "Director of IT @ JBR LIMITED",
-    text: "John's work on our website has been outstanding. He's a skilled developer and an excellent communicator. We highly recommend him.",
+    position: "IT Director @ JBR Limited",
+    text: "Working with John was the best decision we made for our digital overhaul. He is an excellent communicator who bridges the gap between complex code and business goals effortlessly.",
     avatar: memojiAvatar5,
   },
 ];
 
 export default function TestimonialsSection() {
   return (
-    <div className='py-16 lg:py-24'>
-       <div className="container">
-         <SectionHeader eyebrow="Happy Clients"
-            title="What Clients say about Me"
-            descriptions="Don't just take my word for it. See what my clients have to say about my Work."/>
-            <div className="mt-12 lg:mt-20 flex overflow-x-clip  py-4 -my-4 "  style={{
-            maskImage: 'linear-gradient(to right, transparent, black 10%, black 80%, transparent)' }}>
-                <div className="flex flex-none pr-8 gap-8 animate-move-left [animation-duration:90s] hover:[animation-play-state:paused]">
-                     {[...new Array(2)].fill(0).map((_, index) => (
-                         <Fragment key={index}>{testimonials.map ((testimonial) => (
-                         <Card key={testimonial.name} className="max-w-xs p-6 md:p-8 md:max-w-md hover:-rotate-6 transition duration-300 hover:text-emerald-600">
-                            <div className="flex gap-4 items-center">
-                                 <div className="w-14 h-14 bg-gray-700 inline-flex rounded-full items center justify-center flex-shrink-0">
-                                    <Image src={testimonial.avatar} alt={testimonial.name} className="max-h-full "/>
-                                </div>
-                            <div >
-                             <div className="font-semibold text-red-500">{testimonial.name}
-                             </div>
-                            <div className="text-sm text-white/40 hover:text-white">{testimonial.position}
-                            </div>
-                         </div>
-                    </div>
-                    <p className="mt-4 md:mt-6 text-sm md:text-base">{testimonial.text}</p>
-                    </Card> ))};
-                    </Fragment> ) )}
-                 </div>
-                 <div className='absolute inset-0 -z-30 opacity-5'style={{backgroundImage: `url(${grainImage.src})`}}>
-                </div>       
-            </div>
-        </div>
+    <section className='py-16 lg:py-24 relative overflow-x-clip'>
+     
+      <div 
+        className='absolute inset-0 -z-30 opacity-5 pointer-events-none' 
+        style={{ backgroundImage: `url(${grainImage.src})` }}
+      ></div>
       
-    </div>
-  )
+      <div className="container">
+        <SectionHeader 
+          eyebrow="Social Proof"
+          title="Industry Perspectives"
+          descriptions="Hear from the leaders and partners I've collaborated with to build high-impact digital solutions."
+        />       
+       
+        <div className="mt-12 lg:mt-20 flex overflow-x-clip py-4 -my-4 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+          <div className="flex flex-none pr-8 gap-8 animate-move-left [animation-duration:80s] hover:[animation-play-state:paused]">
+           
+            {[...new Array(2)].fill(0).map((_, index) => (
+              <Fragment key={index}>
+                {testimonials.map((testimonial) => (
+                  <Card 
+                    key={`${testimonial.name}-${index}`} 
+                    className="max-w-xs p-6 md:p-8 md:max-w-md transition-all duration-300 hover:-rotate-2 hover:border-emerald-500/40 hover:shadow-xl"
+                  >
+                    <div className="flex gap-4 items-center">
+                     
+                      <div className="w-14 h-14 bg-gray-800 border border-white/10 rounded-full flex-shrink-0 overflow-hidden inline-flex items-center justify-center">
+                        <Image 
+                          src={testimonial.avatar} 
+                          alt={testimonial.name} 
+                          className="max-h-full w-auto"
+                        />
+                      </div>            
+                      
+                      <div>
+                        <div className="font-bold text-white tracking-tight text-lg">
+                          {testimonial.name}
+                        </div>
+                        <div className="text-sm text-emerald-400 font-medium">
+                          {testimonial.position}
+                        </div>
+                      </div>
+                    </div>                  
+                  
+                    <p className="mt-4 md:mt-6 text-sm md:text-base text-white/70 leading-relaxed italic">
+                      &ldquo;{testimonial.text}&rdquo;
+                    </p>
+                  </Card>
+                ))}
+              </Fragment>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }

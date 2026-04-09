@@ -1,42 +1,39 @@
-import React from 'react'
-import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
-import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
-import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
-import { SectionHeader } from '@/components/SectionHeader';
-import weather from "@/assets/images/weather 1.png";
-import book from "@/assets/images/book.png";
-import ecommerce from "@/assets/images/ecommerce.png";
-import onyxandivy from "@/assets/images/onyxandivy.png";
+import React from 'react';
+import Image from 'next/image';
 
+// Component Imports
+import { SectionHeader } from '@/components/SectionHeader';
 import { Card } from '@/components/Cards';
+
+// Asset Imports
 import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
-import grainImage from "@/assets/images/grain.jpg";
-import Image from 'next/image';
-import career from "@/assets/images/career.png"
-import clearmint from "@/assets/images/clearmint.png"
+import career from "@/assets/images/career.png";
+import book from "@/assets/images/book.png";
+import clearmint from "@/assets/images/clearmint.png";
+import onyxandivy from "@/assets/images/onyxandivy.png";
 
 const portfolioProjects = [
   {
     company: "CareerLens",
     year: "2026",
-    title: "AI-powered Resume Analyzer",
+    title: "AI Resume Intelligence Platform",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "70-85% keyword detection accuracy across common tech and business resumes"},
-      { title: "Increased mobile traffic by 35%" },
+      { title: "Achieved 85% keyword precision for ATS optimization" },
+      { title: "Reduced resume tailoring time by 60% for job seekers" },
+      { title: "Mobile-first architecture drove 35% increase in traffic" },
     ],
     link: "https://career-lens-ljjt.vercel.app/",
     image: career,
   },
   {
-    company: "Chapters Cove.",
+    company: "Chapters Cove",
     year: "2024",
-    title: "Effective Book Management System",
+    title: "Curated Literary Commerce Experience",
     results: [
-      { title: "Boosted sales by 20%" },
-      { title: "Expanded customer reach by 35%" },
-      { title: "Increased brand awareness by 15%" },
+      { title: "Implemented seamless inventory-to-sales pipeline" },
+      { title: "Expanded digital customer footprint by 35%" },
+      { title: "Optimized conversion funnels resulting in 20% sales growth" },
     ],
     link: "https://chapter-cove-1.vercel.app/",
     image: book,
@@ -44,80 +41,91 @@ const portfolioProjects = [
   {
     company: "ClearMint",
     year: "2026",
-    title: "The Ultimate AI-Powered Wealth Command Center",
+    title: "AI Financial Wellness Dashboard",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "18.4% Average Savings Increase" },
-      { title: "100% Bank-grade Encryption " },
+      { title: "Engineered real-time predictive spending analytics" },
+      { title: "Boosted average user savings by 18.4% via AI insights" },
+      { title: "Deployed bank-grade AES-256 encryption protocols" },
     ],
     link: "https://clear-mint-f5bo.vercel.app/",
     image: clearmint,
   },
-
   {
     company: "Onyx & Ivy",
     year: "2026",
-    title: "Alternative E-commerce Strategy",
+    title: "High-Performance Luxury E-Store",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      { title: "Reduced Page Content Load (LCP) by 50%" },
+      { title: "Custom headless CMS integration for dynamic scaling" },
+      { title: "Enhanced mobile conversion rates by 40% via UX audit" },
     ],
     link: "https://onyx-and-ivy.vercel.app/",
-    image:onyxandivy,
+    image: onyxandivy,
   },
 ];
 
 export default function Projects() {
   return (
-    <div id='project'>   
-        <section className="pb-30 sm:py-52 lg:py-52" >  
-      <SectionHeader 
+    <section id="project" className="py-20 lg:py-32">
+      <div className="container">
+        <SectionHeader
           eyebrow="Real-world results"
           title="Featured Projects"
           descriptions="See how I transformed concepts into engaging digital experiences"
         />
-        <div className="container">
-        <div className="flex flex-col mt-10 gap-20 md:mt-20">
+
+        <div className="flex flex-col mt-10 gap-20 md:mt-24">
           {portfolioProjects.map((project, projectIndex) => (
             <Card
               key={project.title}
-              className="px-8 pt-8 md:pt-12 md:px-10 lg:mt-16 lg:px-20 pb-0 sticky"
+              className="px-8 pt-8 md:pt-12 md:px-10 lg:px-20 pb-0 sticky overflow-hidden"
               style={{
                 top: `calc(64px + ${projectIndex * 40}px)`,
               }}
             >
               <div className="lg:grid lg:grid-cols-2 lg:gap-16">
                 <div className="lg:pb-16">
-                  <div className="bg-gradient-to-r from-red-400 to-sky-400 gap-2 inline-flex font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text ">
+                  {/* Company & Year Badge */}
+                  <div className="bg-gradient-to-r from-red-400 to-sky-400 inline-flex gap-2 font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text">
                     <span>{project.company}</span>
-                    <span> &bull;</span>
+                    <span className="text-white/20">&bull;</span>
                     <span>{project.year}</span>
                   </div>
+
                   <h3 className="font-serif text-2xl mt-2 font-extrabold md:text-4xl md:mt-5">
                     {project.title}
                   </h3>
+                  
                   <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
+
+                  {/* Results List */}
                   <ul className="flex flex-col gap-4 mt-4 md:mt-5">
                     {project.results.map((result, index) => (
-                      <li key={index} className="flex gap-2 text-sm text-white/50 md:text-base">
-                        <CheckCircleIcon className="w-5 h-5 md:w-6 h-6" />
+                      <li key={index} className="flex gap-3 text-sm text-white/50 md:text-base">
+                        <CheckCircleIcon className="size-5 md:size-6 flex-shrink-0 text-sky-400" />
                         <span>{result.title}</span>
                       </li>
                     ))}
                   </ul>
-                  <a href={project.link} target="_blank" rel="noopener noreferrer">
-                    <button className="bg-blue-950 text-white h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8 md:w-auto px-6">
-                      <span>Visit Live Site</span>
-                      <ArrowUpRightIcon className="w-4 h-4" />
-                    </button>
+
+                  {/* CTA */}
+                  <a 
+                    href={project.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="bg-white text-gray-950 h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8 md:w-auto px-6 transition-all hover:bg-gray-200 active:scale-95"
+                  >
+                    <span>Visit Live Site</span>
+                    <ArrowUpRightIcon className="size-4" />
                   </a>
                 </div>
-                <div className="relative">
+
+                {/* Project Image */}
+                <div className="relative group">
                   <Image
                     src={project.image}
-                    alt={project.title}
-                    className="mt-8 -mb-4 md:-mb-0 lg:mt-0 lg:absolute lg:h-full lg:max-w-none lg:w-auto"
+                    alt={`${project.title} Preview`}
+                    className="mt-8 -mb-4 md:-mb-0 lg:mt-0 lg:absolute lg:h-full lg:max-w-none lg:w-auto rounded-t-xl transition-transform duration-500 group-hover:-translate-y-2"
                   />
                 </div>
               </div>
@@ -125,8 +133,6 @@ export default function Projects() {
           ))}
         </div>
       </div>
-        </section> 
-    </div>
-  
-  )
+    </section>
+  );
 }

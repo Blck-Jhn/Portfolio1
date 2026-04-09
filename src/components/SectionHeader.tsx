@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 export const SectionHeader = ({
   title,
   eyebrow,
   descriptions,
 }:{
-  title:string,
+  title:string | React.ReactNode,
   eyebrow:string,
   descriptions:string;
 }) => {
